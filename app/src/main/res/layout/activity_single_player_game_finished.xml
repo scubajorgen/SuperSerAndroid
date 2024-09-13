@@ -1,0 +1,191 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sp_game_finished_mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
+    tools:context=".TestActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/sp_game_finished_activity_title"
+		    android:textSize="20sp"
+		    android:textStyle="bold"  >"
+
+		</TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_score_label"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.3"
+		    android:text="@string/sp_game_finished_activity_label_score"
+		    android:textSize="20sp" >
+
+		</TextView>
+		
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_score_value"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.7"
+		    android:text="100"
+		    android:textSize="20sp" >
+
+		</TextView>
+		
+		
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_user_label"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.3"
+		    android:text="@string/sp_game_finished_activity_label_user"
+		    android:textSize="20dp" >
+
+		</TextView>
+
+		<EditText
+		    android:id="@+id/sp_game_finished_activity_user_value"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.7"
+		    android:ems="10" >
+
+		    <requestFocus />
+		</EditText>
+		
+    </LinearLayout>
+        
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_password_label"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.3"
+		    android:text="@string/sp_game_finished_activity_label_password"
+		    android:textSize="20sp" >
+
+		</TextView>
+
+		<EditText
+		    android:id="@+id/sp_game_finished_activity_password_value"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.7"
+		    android:ems="10"
+		    android:inputType="textPassword" />
+		
+    </LinearLayout>
+        
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_server_label"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.3"
+		    android:text="@string/sp_game_finished_activity_label_server"
+		    android:textSize="20dp" >
+
+		</TextView>
+
+		<EditText
+		    android:id="@+id/sp_game_finished_activity_server_value"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.5"
+		    android:ems="10" />
+
+		<EditText
+		    android:id="@+id/sp_game_finished_activity_port_value"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.2"
+		    android:ems="10" />		
+				
+    </LinearLayout>
+        
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+		<TextView
+		    android:id="@+id/sp_game_finished_activity_status"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/sp_game_finished_activity_status_send"
+		    android:textSize="20dp" >
+
+		</TextView>
+
+		
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.14286"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/sp_game_finished_activity_send_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/sp_game_finished_activity_button_send" 
+            android:onClick="sendScore"/>
+
+		<Button
+		    android:id="@+id/sp_game_finished_activity_dontsend_button"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.5"
+		    android:text="@string/sp_game_finished_activity_button_dontsend"
+		    android:onClick="dontSendScore" />
+		
+    </LinearLayout>
+    
+    
+</LinearLayout>
+    

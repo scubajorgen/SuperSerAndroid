@@ -1,0 +1,57 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	    <EditTextPreference
+	        android:title="@string/pref_user_user_title"
+	        android:key="pref_user_user"
+	        android:summary="@string/pref_user_user_summary"
+	        android:defaultValue="@string/pref_user_user_default"
+	        android:inputType="textNoSuggestions"
+	        android:maxLength="20" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_password_title"
+	        android:key="pref_user_password"
+	        android:summary="@string/pref_user_password_summary"
+	        android:defaultValue="@string/pref_user_password_default"
+	        android:inputType="textPassword" 
+	        android:maxLength="20" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_server_title"
+	        android:key="pref_user_server"
+	        android:summary="@string/pref_user_server_summary"
+	        android:defaultValue="@string/pref_user_server_default"
+	        android:inputType="textUri" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_port_title"
+	        android:key="pref_user_port"
+	        android:summary="@string/pref_user_port_summary"
+	        android:defaultValue="@string/pref_user_port_default"
+	        android:inputType="number" />
+        
+	  	<PreferenceScreen android:title="@string/pref_user_reguser_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.RegisterUserActivity"
+        />
+		</PreferenceScreen>
+	    
+	  	<PreferenceScreen android:title="@string/pref_user_unreguser_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.DeleteUserActivity"
+        />
+		</PreferenceScreen>
+	  	
+	  		    <PreferenceScreen android:title="@string/pref_user_checkserver_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.CheckServerActivity"
+        />
+		</PreferenceScreen>       
+	    
+</PreferenceScreen>

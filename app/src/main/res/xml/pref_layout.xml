@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <ListPreference
+            android:title="@string/pref_layout_symbolset_title"
+            android:key="pref_layout_symbolset"
+            android:defaultValue="@string/pref_layout_symbolset_default"
+            android:entries="@array/pref_layout_symbolset_entries"
+            android:entryValues="@array/pref_layout_symbolset_values" />
+
+	    <EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorred_title"
+	        android:key="pref_layout_symbolcolorred"
+	        android:summary="@string/pref_layout_symbolcolorred_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorred_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />        
+	    
+	    <EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorblue_title"
+	        android:key="pref_layout_symbolcolorblue"
+	        android:summary="@string/pref_layout_symbolcolorblue_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorblue_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />
+	            
+	  	<EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorpurple_title"
+	        android:key="pref_layout_symbolcolorpurple"
+	        android:summary="@string/pref_layout_symbolcolorpurple_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorpurple_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />        
+	    
+
+</PreferenceScreen>

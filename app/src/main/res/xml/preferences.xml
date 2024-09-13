@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory 
+        android:title="@string/pref_category_layout_title"
+        android:key="pref_layout_settings">
+
+        <ListPreference
+            android:title="@string/pref_layout_symbolset_title"
+            android:key="pref_layout_symbolset"
+            android:defaultValue="@string/pref_layout_symbolset_default"
+            android:entries="@array/pref_layout_symbolset_entries"
+            android:entryValues="@array/pref_layout_symbolset_values" />
+
+	    <EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorred_title"
+	        android:key="pref_layout_symbolcolorred"
+	        android:summary="@string/pref_layout_symbolcolorred_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorred_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />        
+	    
+	    <EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorblue_title"
+	        android:key="pref_layout_symbolcolorblue"
+	        android:summary="@string/pref_layout_symbolcolorblue_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorblue_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />
+	            
+	  	<EditTextPreference
+	        android:title="@string/pref_layout_symbolcolorpurple_title"
+	        android:key="pref_layout_symbolcolorpurple"
+	        android:summary="@string/pref_layout_symbolcolorpurple_summary"
+	        android:defaultValue="@string/pref_layout_symbolcolorpurple_default"
+			android:digits="0123456789ABCDEF"
+			android:inputType="textCapCharacters" />        
+	    
+	    
+	</PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/pref_category_user_title"
+        android:key="pref_user_settings">
+
+	    <EditTextPreference
+	        android:title="@string/pref_user_user_title"
+	        android:key="pref_user_user"
+	        android:summary="@string/pref_user_user_summary"
+	        android:defaultValue="@string/pref_user_user_default"
+	        android:inputType="textNoSuggestions"
+	        android:maxLength="20" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_password_title"
+	        android:key="pref_user_password"
+	        android:summary="@string/pref_user_password_summary"
+	        android:defaultValue="@string/pref_user_password_default"
+	        android:inputType="textPassword" 
+	        android:maxLength="20" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_server_title"
+	        android:key="pref_user_server"
+	        android:summary="@string/pref_user_server_summary"
+	        android:defaultValue="@string/pref_user_server_default"
+	        android:inputType="textNoSuggestions" />
+        
+	    <EditTextPreference
+	        android:title="@string/pref_user_port_title"
+	        android:key="pref_user_port"
+	        android:summary="@string/pref_user_port_summary"
+	        android:defaultValue="@string/pref_user_port_default"
+	        android:inputType="number" />
+        
+	  	<PreferenceScreen android:title="@string/pref_user_reguser_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.RegisterUserActivity"
+        />
+		</PreferenceScreen>
+	    
+	  	<PreferenceScreen android:title="@string/pref_user_unreguser_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.DeleteUserActivity"
+        />
+		</PreferenceScreen>
+	  	
+	  		    <PreferenceScreen android:title="@string/pref_user_checkserver_title">
+    	<intent
+        	android:action="android.intent.action.MAIN"
+        	android:targetPackage="net.studioblueplanet.superset"
+        	android:targetClass="net.studioblueplanet.superset.CheckServerActivity"
+        />
+		</PreferenceScreen>
+	    
+	 </PreferenceCategory>
+    
+    
+    
+</PreferenceScreen>

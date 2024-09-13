@@ -1,0 +1,58 @@
+<resources>
+
+    <string name="pref_category_layout_title">Layout</string>
+    <string name="pref_category_layout_summary">Symbolset and color settings</string>
+    <string name="pref_category_user_title">User</string>
+    <string name="pref_category_user_summary">User and Superset Server settings</string>
+    
+    <string name="pref_layout_symbolset_title">Symbol Set</string>
+    <string name="pref_layout_symbolset_default">Classic</string>
+    
+    
+    <string-array name="pref_layout_symbolset_entries">
+        <item>Card game</item>
+        <item>Classic</item>
+    </string-array>
+
+    <string-array name="pref_layout_symbolset_values">
+        <item>Card game</item>
+        <item>Classic</item>
+    </string-array> 
+
+    <string name="pref_user_user_title">Username</string>
+    <string name="pref_user_user_summary">Username for logging into the server</string>
+    <string name="pref_user_user_default">user</string>
+    
+    <string name="pref_user_password_title">Password</string>
+    <string name="pref_user_password_summary">Password for logging into the server</string>
+    <string name="pref_user_password_default"></string>
+    
+    <string name="pref_user_server_title">SuperSet Server</string>
+    <string name="pref_user_server_summary">SuperSet Server</string>
+    <string name="pref_user_server_default">studioblueplanet.net</string>
+    
+    <string name="pref_user_port_title">SuperSet Server Port</string>
+    <string name="pref_user_port_summary">Server Port to use</string>
+    <string name="pref_user_port_default">1501</string>
+    
+    <string name="pref_user_reguser_title">Register User with server</string>
+    
+    <string name="pref_user_unreguser_title">Unregister User with server</string>
+    
+    <string name="pref_user_checkserver_title">Check User at server</string>
+
+    <string name="pref_layout_symbolcolorred_title">First color</string>
+    <string name="pref_layout_symbolcolorred_summary">Define the RGB value in hex</string>
+    <string name="pref_layout_symbolcolorred_default">FF0000</string>
+    
+    <string name="pref_layout_symbolcolorblue_title">Second color</string>
+    <string name="pref_layout_symbolcolorblue_summary">Define the RGB value in hex</string>
+    <string name="pref_layout_symbolcolorblue_default">009600</string>
+    
+    <string name="pref_layout_symbolcolorpurple_title">Third color</string>
+    <string name="pref_layout_symbolcolorpurple_summary">Define the RGB value in hex</string>
+    <string name="pref_layout_symbolcolorpurple_default">FF00FF</string>
+    
+    
+    
+</resources>

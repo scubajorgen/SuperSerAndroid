@@ -1,0 +1,14 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="net.studioblueplanet.superset.SettingsNewActivity$LayoutPreferenceFragment"
+        android:title="@string/pref_category_layout_title"
+        android:summary="@string/pref_category_layout_summary" />
+    <header
+        android:fragment="net.studioblueplanet.superset.SettingsNewActivity$UserPreferenceFragment"
+        android:title="@string/pref_category_user_title"
+        android:summary="@string/pref_category_user_summary" />
+
+</preference-headers>
