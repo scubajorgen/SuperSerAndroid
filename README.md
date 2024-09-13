@@ -23,3 +23,12 @@ I intended to add a two player multi-game mode over the internet, but I never fi
 
 According to todays security standards, the application is poorly implemented, meaning 
 that the scoring system can be manipulated easily.
+
+## Version History
+### Version 4: major update
+Version 4 was a major update since the first versions. Therefore version 4 is not compatible with
+earlier version
+
+### Version 5: current android version
+The current version of the Android app is version 5 (09-2024). It is compatbile with version 4 
+regarding the communciation to the SuperSetServer.
