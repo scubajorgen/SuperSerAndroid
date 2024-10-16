@@ -7,7 +7,6 @@ import android.graphics.Path;
 /**
  * This class represents a polygon
  * @author jorgen
- *
  */
 public class Polygon
 {
@@ -15,17 +14,16 @@ public class Polygon
 	public static final int Y=1;
 	
 	private int[][]			points;
-	
+
+	/**
+	 * Constructor defining the polygon
+	 * @param points Points making up the polygon
+	 */
 	public Polygon(int[][] points)
 	{
 		this.points=points;
 	}
-	
-	private Polygon()
-	{
-		
-	}
-	
+
 	/**
 	 * This method draws the polygon on the canvas
 	 * @param canvas The canvas to draw on
@@ -84,10 +82,8 @@ public class Polygon
 		
 		size=sourcePolygon.points.length;
 		
-		scaledPolygon=new Polygon();
-		scaledPolygon.points=new int[size][2];
-		
-
+		int[][] points		=new int[size][2];
+		scaledPolygon		=new Polygon(points);
 
     	// Find the max. dimensions of the original polygon
     	i=0;

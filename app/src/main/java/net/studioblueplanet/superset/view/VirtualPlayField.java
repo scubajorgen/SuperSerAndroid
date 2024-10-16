@@ -8,14 +8,12 @@ import net.studioblueplanet.superset.Config;
 
 
 /**
- * This method represents a playfield, i.e. a grid containing card positions.
+ * This method represents a Set playfield, i.e. a grid containing card positions.
  * @author jorgen
  *
  */
 public abstract class VirtualPlayField
 {
-
-	
 	/** Number of tagged cards */
 	protected int								numberOfTaggedCards;
 
@@ -28,8 +26,6 @@ public abstract class VirtualPlayField
 	/** The cards that are exposed to the user */
 	protected Card[]							cardsInPlay;
 
-
-	
 	/**********************************************************************************************\
 	 * Constructor
 	\**********************************************************************************************/	
@@ -124,9 +120,11 @@ public abstract class VirtualPlayField
 		position.setCard(card);
 	}
 
-	/********************************************************************\
-	*  
-	\********************************************************************/
+	/**
+	 *
+	 * @param cards
+	 * @return
+	 */
 	protected boolean isSet(Card[] cards)
 	{
 		int		i, j;
@@ -201,11 +199,11 @@ public abstract class VirtualPlayField
 						(fillingsSame || fillingsDifferent);
 
 		return returnValue;
-	}	
-	
-	/********************************************************************\
-	*  
-	\********************************************************************/
+	}
+
+	/**
+	 *
+	 */
 	protected void untagTaggedCards()
 	{
 		int					i;
@@ -229,8 +227,6 @@ public abstract class VirtualPlayField
 	/**********************************************************************************************\
 	 * Public methods
 	\**********************************************************************************************/
-
-
 	/**
 	 *  This method adds a card to the playfield. The most logical position
 	 *  is calculated.
@@ -303,8 +299,6 @@ public abstract class VirtualPlayField
 		return foundPosition;
 	}
 
-
-
 	/**
 	 *  This method returns the card given a (row, col) position on the play field 
 	 *  @param row The row coordinate
@@ -326,14 +320,11 @@ public abstract class VirtualPlayField
 		return position.getCard();
 	}
 
-
-
-
 	/**
 	 *  This method sets the tagging of a card on the play field
 	 *  @param row    Row position of the card to tag
 	 *  @param col    Column position of the card to tag
-	 *  @param True if three cards have been tagged, false if not
+	 *  @param tagged True if three cards have been tagged, false if not
 	 */
 	public boolean setTagging(int row, int col, boolean tagged)
 	{
@@ -361,10 +352,6 @@ public abstract class VirtualPlayField
 		return threeCardsTagged;
 	}
 
-
-
-
-
 	/**
 	 *  Remove the cards that are tagged as part of a SET. 
 	 */
@@ -385,8 +372,6 @@ public abstract class VirtualPlayField
 			i++;
 		}
 	}
-
-
 
 	/**
 	 *  This method resets the playfield. This means 
@@ -450,7 +435,6 @@ public abstract class VirtualPlayField
 
 	}
 
-
 	/**
 	 *  This method returns whether the tagged cards represent a SET.
 	 *  @return true If three cards are tagged and they are a set. False if not.
@@ -483,10 +467,7 @@ public abstract class VirtualPlayField
 		}
 
 		return returnValue;
-
 	}
-
-
 
 	/**
 	 *  This method returns one of the SETs that are on the playfield
@@ -501,10 +482,8 @@ public abstract class VirtualPlayField
 		ArrayList<Set> 	theList;
 		Set				newSet;
 
-
 		cards=new Card[Config.SET_SIZE];
 		theList=new ArrayList<Set>();
-		
 
 		// cards (and empty spaces) are put in a linear array. 
 		// That makes things easier to calculate
@@ -562,14 +541,6 @@ public abstract class VirtualPlayField
 			}
 			i++;
 		}
-
 		return theList;
-
 	}
-
-
-
-
-	
-	
 }

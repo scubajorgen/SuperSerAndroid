@@ -42,7 +42,6 @@ public class SinglePlayerGame extends Game
 		{
 			game.timerCallback();
 		}
-		
 	}
 
 	/**
@@ -54,8 +53,7 @@ public class SinglePlayerGame extends Game
 	{
 		private SinglePlayerGame game;
 		private Thread thread;
-		
-		
+
 		public SimulationThread(SinglePlayerGame game)
 		{
 			this.game=game;
@@ -72,8 +70,7 @@ public class SinglePlayerGame extends Game
 		{
 			thread.start();
 		}
-		
-	}	
+	}
 	
 	
 	/** Timer timeout in milliseconds */
@@ -117,7 +114,6 @@ public class SinglePlayerGame extends Game
 
 	private boolean				noSetFoundPressed;
 
-	
 	private SimulationThread    simThread;
 	private boolean				simulating;
 	private int         		simulatedGames;
@@ -135,10 +131,8 @@ public class SinglePlayerGame extends Game
     
     private ScoreListener		scoreListener;
 
-
     private View				theView;
-    
-    
+
     /**
      * Constructor. Initializes the game
      * @param playField The PlayField instance to use
@@ -149,12 +143,10 @@ public class SinglePlayerGame extends Game
 
     	deck		        =new Deck();
     	state		        =PlayState.PLAYSTATE_STOPPED;	// Default state is stopped
-  	
-        simulating          =false;
+  	    simulating          =false;
         simulatedGames      =0;
         easterEggStopCount  =0;
         easterEggNoSetCount =0;
-        
         theView				=null;
     }
     
@@ -177,9 +169,7 @@ public class SinglePlayerGame extends Game
     {
     	this.scoreListener=scoreListener;
     }
-    
 
- 
     /*
      * This method prepars a new game. It must be called when 
      * a new game is started. It resets and shuffles the deck.
@@ -191,7 +181,6 @@ public class SinglePlayerGame extends Game
     	deck.resetCards();						// put the card index to the top
     	deck.shuffleDeck();						// shuffle the deck
 
-    	
     	playField.emptyPlayField();				// remove any left cards (from previous game)
     	playField.resetPlayField();				// empty the playfield
     	playField.hideCards();					// since the state is paused, pause the playfield
@@ -201,11 +190,9 @@ public class SinglePlayerGame extends Game
     	scoreIncrementAsInt=(int)INITIALSCOREINCREMENT;
     	previousScoreIncrementAsInt=-1;			// reset the score increment
 
-
     	highlightedSet=-1;
     	numberOfSets=0;
     	noSetFoundPressed=false;
-
     }
 
 
@@ -235,8 +222,6 @@ public class SinglePlayerGame extends Game
     	playField.showCards();						// Show the cards
       	playField.setGamePaused(false);				// set play state to the view
 
-      	
-      	
     	// register the start time of the game.
 //    	timerTickCount=0;	
     	this.gameStartTime=System.nanoTime();
@@ -248,11 +233,8 @@ public class SinglePlayerGame extends Game
     	
     	// Start the associated timer
     	playTimer.scheduleAtFixedRate(playTimerTask, 0, TIMER_TIMEOUT);
-    	
 
     	updatePlayState(PlayState.PLAYSTATE_PLAYING);
-
-
     }
 
     /**
@@ -322,8 +304,6 @@ public class SinglePlayerGame extends Game
     		break;
     	case PLAYSTATE_PLAYING:
     		pauseGame();
-    		
-   
 			alertDialogBuilder = new AlertDialog.Builder((CurrentActivityRegister.getInstance()).getCurrentActivity());
 	 
 			// set title
@@ -997,12 +977,8 @@ System.out.println(Long.toString(System.nanoTime())+", "+Double.toString(scoreIn
 
             }
         }
-
-
     }
 
-
-    
     /**
      * This method starts the simulation (easter egg)
      */
@@ -1015,10 +991,5 @@ System.out.println(Long.toString(System.nanoTime())+", "+Double.toString(scoreIn
 
     	simThread=new SimulationThread(this);
     	simThread.startThread();
-
-        
     }
-
-    
-	
 }

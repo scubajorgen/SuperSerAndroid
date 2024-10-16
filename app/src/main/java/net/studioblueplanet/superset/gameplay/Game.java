@@ -19,7 +19,6 @@ public class Game
 		PLAYSTATE_FINISHED
 	};
 
-
 	/**
 	 *   Message box caption. Scratch.
 	 */
@@ -30,15 +29,12 @@ public class Game
 	 */
 	protected static String		message;
 
-
 	/** State of the game */
 	protected PlayState			state;
-
 
 	/** Playfield, containing bar and SET cards */
 	PlayField					playField;	
 
-	
 	/**
 	 * Constructor
 	 * @param playField The PlayField to use.
@@ -48,11 +44,6 @@ public class Game
 		state					=PlayState.PLAYSTATE_IDLE;
 		this.playField          =playField;
 	}
-
-
-
-
-
 
 	/**
 	 * Update the state of the game
@@ -66,8 +57,6 @@ public class Game
 		}
 	}
 
-
-	
 	/**
 	 * This method returns the game state (thread safe)
 	 * @return The state of the game.
@@ -75,18 +64,10 @@ public class Game
 	PlayState getState()
 	{
 		PlayState theState;
-
-
 		synchronized(this)
 		{
 			theState=state;
 		}
-
 		return theState;
 	}
-
-
-
-
-	
 }

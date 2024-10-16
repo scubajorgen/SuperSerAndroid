@@ -118,15 +118,10 @@ public class SinglePlayerGameView extends View
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
-			
-		playField.startStopwatch();		
+		playField.startStopwatch();
 //		super.onDraw(canvas);
-		
-
 		playField.paintPlayfield(canvas);
-
-		
-		playField.stopStopwatch(100);		
+		playField.stopStopwatch(100);
 	}	
 
 	
@@ -187,8 +182,6 @@ public class SinglePlayerGameView extends View
 			
 			break;
 		}
-		
-		
 		return hasConsumedEvent;
 	}
 	

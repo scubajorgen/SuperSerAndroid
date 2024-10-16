@@ -7,24 +7,19 @@ import net.studioblueplanet.superset.gameplay.Card;
  * The class is thread-safe
  * 
  * @author jorgen
- *
  */
 public class VirtualPlayFieldPosition
 {
-	
 	/* Data under protection of the guard */
 	protected boolean	positionHasCard;
 	protected boolean	cardIsTagged;
-	protected Card card;
+	protected Card 		card;
 	/* End of data under protection of the guard */
-	
 	protected Object	guard;
 	
-
 	/* *********************************************************************************************\
 	 * Constructor
 	\* *********************************************************************************************/
-
 	/**
 	 * Constructor, resets the position 
 	 */
@@ -45,9 +40,6 @@ public class VirtualPlayFieldPosition
 	/* *********************************************************************************************\
 	 * Public methods
 	\* *********************************************************************************************/
-
-	
-	
 	/**
 	 * Resets the position parameters: empties the position
 	 */
@@ -60,9 +52,7 @@ public class VirtualPlayFieldPosition
 			this.positionHasCard	=false;
 		}
 	}
-	
-	
-	
+
 	/**
 	 * This method adds a Set Card to the position
 	 * @param card Reference of the card to add
@@ -75,9 +65,7 @@ public class VirtualPlayFieldPosition
 			this.positionHasCard	=(this.card!=null);
 		}
 	}
-	
-	
-	
+
 	/**
 	 * This method empties the position, i.e. removes the card, if any
 	 */
@@ -89,8 +77,6 @@ public class VirtualPlayFieldPosition
 			this.positionHasCard	=false;
 		}
 	}
-	
-	
 	
 	/**
 	 * This method returns the card on the position
@@ -105,8 +91,7 @@ public class VirtualPlayFieldPosition
 		}
 		return returnCard;
 	}
-	
-	
+
 	/**
 	 * This method returns whether the card on the position is tagged, i.e. is 
 	 * selected by the user
@@ -122,7 +107,11 @@ public class VirtualPlayFieldPosition
 		}
 		return isTagged;
 	}
-	
+
+	/**
+	 * This method returns whether there is a card on this position or not
+	 * @return True if the position has a card
+	 */
 	public boolean hasCard()
 	{
 		boolean hasCard;
@@ -133,7 +122,6 @@ public class VirtualPlayFieldPosition
 		}
 		return hasCard;
 	}
-	
 	
 	/**
 	 * This method sets the tagging of the Card on the position
@@ -146,5 +134,4 @@ public class VirtualPlayFieldPosition
 			cardIsTagged=tagged;
 		}
 	}	
-	
 }

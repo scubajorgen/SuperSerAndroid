@@ -5,7 +5,6 @@ import android.graphics.Rect;
 /**
  * This class represents a PlayFielBar button
  * @author jorgen
- *
  */
 public class BarButton
 {

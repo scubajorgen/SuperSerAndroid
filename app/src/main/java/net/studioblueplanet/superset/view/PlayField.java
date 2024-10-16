@@ -8,19 +8,14 @@ import android.graphics.BitmapFactory;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 import net.studioblueplanet.superset.gameplay.Card;
 import net.studioblueplanet.superset.gameplay.Set;
 import net.studioblueplanet.superset.Config;
-
 import net.studioblueplanet.superset.util.SymbolSet;
+import net.studioblueplanet.superset.R;
 
 /**
  * This class represents the playfield content
- * @author jorgen
- *
- */
-/**
  * @author jorgen
  *
  */
@@ -48,7 +43,6 @@ public class PlayField extends VirtualPlayField
 	private int								playFieldWidth;
 	private int								playFieldX;
 	private int								playFieldY;
-
 
 	private boolean							visible;
 
@@ -78,22 +72,17 @@ public class PlayField extends VirtualPlayField
 	
 	private Rect							dirtyRect;
 	private boolean							isDirty;
-	
-	
+
 	// Debuggging
 	private int								invalidateCount=0;
 	private int								redrawCount=0;
 	private long							startTime;
 	private long							endTime;
-	
-	
 	/* *********************************************************************************************\
 	 * Constructor
 	\* *********************************************************************************************/
-
-
 	/**
-	 *  Constuctor. Initialises variables, resets (=empties) the play field
+	 *  Constructor. Initialises variables, resets (=empties) the play field
 	 */
 	private PlayField()
 	{
@@ -126,8 +115,7 @@ public class PlayField extends VirtualPlayField
 		playFieldWidth	=0;
 		playFieldX		=0;
 		playFieldY		=0;
-	
-		
+
 		view			=null;
 		
 		dirtyRect		=new Rect();
@@ -135,16 +123,11 @@ public class PlayField extends VirtualPlayField
 
 		// Trigger first time initialising of graphics
 		initGraphics	=true;
-		
 	}
-	
-	
-
 
 	/* *********************************************************************************************\
 	 *  Private methods
 	\* *********************************************************************************************/
-
 	/**
 	 *  This method loads the background image
 	 */
@@ -156,7 +139,7 @@ public class PlayField extends VirtualPlayField
 		{
 			// Load the bitmap file
 			options=new BitmapFactory.Options();
-			rawBackgroundImage=BitmapFactory.decodeResource(view.getResources(), net.studioblueplanet.superset.R.drawable.background, options);
+			rawBackgroundImage=BitmapFactory.decodeResource(view.getResources(), R.drawable.background, options);
 			
 			// create a scaled bitmap exactly the size of the screen
 			backgroundImage=Bitmap.createScaledBitmap(rawBackgroundImage, screenWidth, screenHeight, true);
@@ -166,8 +149,8 @@ public class PlayField extends VirtualPlayField
 	
 	/**
 	 * Create the offline image.
-	 * @param width Width of the image
-	 * @param height Height of the image
+	 * @param screenWidth Width of the image
+	 * @param screenHeight Height of the image
 	 */
 	private void createOfflineImage(int screenWidth, int screenHeight)
 	{
@@ -183,8 +166,7 @@ public class PlayField extends VirtualPlayField
 		
 		bar.paintBar(offlineCanvas);
 	}
-	
-	
+
 	/**
 	 * This method initialises the graphics parameters.
 	 * @param screenCanvas The canvas representing the screen
@@ -201,15 +183,11 @@ public class PlayField extends VirtualPlayField
 	
 		// If playfield dimensions changed, recalculate card coordinates
 		// and recreate the 
-	
-
-	
 		// The dimensions of the canvas
 		// The Canvas holds the status bar at the top and the card field below it
 		canvasHeight=screenCanvas.getHeight();
 		canvasWidth=screenCanvas.getWidth();
 
-		
 		// The canvas
 		canvasRect=new Rect();
 		canvasRect.left=0;
@@ -355,15 +333,12 @@ public class PlayField extends VirtualPlayField
 			}
 			invalidateCount++;
 		}
-		
-		
 	}
 
 	
 	/* *********************************************************************************************\
 	 * Public methods
 	\* *********************************************************************************************/	
-	
 	/**
 	 * This method returns the one and only instance of this Singleton class.
 	 * @return The instance.
@@ -440,7 +415,6 @@ public class PlayField extends VirtualPlayField
 			this.invalidate(position.getPositionDimension());
 			found=true;
 		}
-		
 		return found;
 	}
 	
@@ -486,22 +460,17 @@ public class PlayField extends VirtualPlayField
 	}	
 	
 	/**
-	 * Triggers the PlayField to inialises its graphics environment
+	 * Triggers the PlayField to initialises its graphics environment
 	 * next time the PlayField is drawn.
 	 */
 	public void initialiseGraphics()
 	{
 		initGraphics=true;
 	}
-	
-	
-	
-	
+
 	/**
 	 *  This routine draws the playfield. 
-	 *  @param hWnd Reference to the window
-	 *  @param ps   Paintstructure
-	 *  @param hdc  hdc
+	 *  @param screenCanvas Canvas to draw the playfield on
 	 */
 	public void paintPlayfield(Canvas screenCanvas)
 	{
@@ -534,8 +503,6 @@ public class PlayField extends VirtualPlayField
 			// This is the total screen
 			screenCanvas.drawBitmap(offlineBitmap, 0, 0, backgroundPaint);
 		}
-	
-	
 	}
 	
 	
@@ -565,10 +532,7 @@ public class PlayField extends VirtualPlayField
 			i++;
 		}
 	}
-	
-	
-	
-	
+
 	/**
 	 *  This routine calculates the mouse/stylus event into some action
 	 *  - A card may be tagged or untagged
@@ -576,7 +540,6 @@ public class PlayField extends VirtualPlayField
 	 *  @param mouseX
 	 *  @param mouseY
 	 *  @param event
-	 *  @param taggedCards
 	 *  @return The action taken
 	 */
 	public PlayFieldAction handleAction(int mouseX, int mouseY, int event)
@@ -818,21 +781,13 @@ public class PlayField extends VirtualPlayField
 		}
 	}
 	
-	
-
-
-	
-
-
 	/**
 	 * Sets whether the game is paused or playing
 	 * @param isPaused True for pausing, false for playing
 	 */
 	public void setGamePaused(boolean isPaused)
 	{
-
 		bar.setGamePaused(offlineCanvas, isPaused);
-		
 	}
 
 	/**

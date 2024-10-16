@@ -24,7 +24,6 @@ public class Deck
 	public Deck()
 	{
 		int i;
-		
 		cards=new Card[MAX_CARDS];
 		i=0;
 		while (i<MAX_CARDS)
@@ -32,7 +31,6 @@ public class Deck
 			cards[i]=new Card();
 			i++;
 		}
-		
 		cardIndex=0;
 		resetDeck();
 	}
@@ -121,7 +119,7 @@ public class Deck
 		Card	swapCard;
 
 		i=0;
-		while (i<10000)
+		while (i<100000)
 		{
 			index1=(int)(Math.random()*MAX_CARDS);
 			index2=(int)(Math.random()*MAX_CARDS);
@@ -152,7 +150,6 @@ public class Deck
 	Card nextCard()
 	{
 		Card nextCard;
-
 		if (cardIndex<MAX_CARDS)
 		{
 			nextCard=cards[cardIndex];
@@ -162,7 +159,6 @@ public class Deck
 		{
 			nextCard=null;
 		}
-
 		return nextCard;
 	}
 
@@ -199,7 +195,6 @@ public class Deck
 			}
 			i++;
 		}
-
 		return card;
 	}	
 }
